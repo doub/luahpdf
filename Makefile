@@ -71,7 +71,7 @@ install : $(TARGET) doc
 	install -m 0755 -d "$(DESTDIR)$(DOCDIR)"
 	install -m 0755 -d "$(DESTDIR)$(DOCDIR)/text"
 	install -m 0755 -d "$(DESTDIR)$(DOCDIR)/html"
-	install -m 0644 README doc/*.lua "$(DESTDIR)$(DOCDIR)"
+	install -m 0644 README.md doc/*.lua "$(DESTDIR)$(DOCDIR)"
 	install -m 0644 doc/text/*.txt "$(DESTDIR)$(DOCDIR)/text"
 	install -m 0644 doc/html/*.html doc/html/*.css doc/html/*.png "$(DESTDIR)$(DOCDIR)/html"
 
@@ -87,7 +87,7 @@ package : clean doc
 	cp doc/html/*.css doc/html/*.png doc/html/*.html $(PACKAGE)/doc/html
 	cp demo/* $(PACKAGE)/demo
 	cp windows/* $(PACKAGE)/windows
-	cp README Makefile hpdf.c $(PACKAGE)
+	cp README.md Makefile hpdf.c $(PACKAGE)
 	tar czvf $(TAR) $(PACKAGE)
 	zip -r $(ZIP) $(PACKAGE)
 	rm -fr $(PACKAGE)
