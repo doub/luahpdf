@@ -8,6 +8,9 @@ $Id: hpdf.c 32002 2010-11-10 12:37:13Z kurt $
 #include <lualib.h>
 #include <lauxlib.h>
 #include <hpdf.h>
+#ifdef HPDF_SHARED
+#include "luahpdf_error.h"
+#endif
 
 #ifndef HPDF_SHARED
   typedef void *HPDF_HANDLE;
