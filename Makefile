@@ -2,10 +2,10 @@
 # --- the build documentation for more details. ---
 
 PREFIX=/usr/local
-MODDIR=$(PREFIX)/lib/lua/5.2
+MODDIR=$(PREFIX)/lib/lua/5.3
 DOCDIR=$(PREFIX)/share/doc/luahpdf
-LUALIB=-llua5.2
-LUAINC=-I/usr/include/lua5.2
+LUALIB=-llua5.3
+LUAINC=-I/usr/include/lua5.3
 HPDFLIB=-lhpdf
 HPDFINC=
 LUA=lua
