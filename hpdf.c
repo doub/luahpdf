@@ -461,7 +461,7 @@ static HPDF_REAL LclTblNum(
   lua_rawget(L, -2);
   /* Stk: ... Tbl Num? */
   if (lua_isnumber(L, -1)) Num = (HPDF_REAL) lua_tonumber(L, -1);
-  else luaL_error(L, "field " LUA_QS " not found", NameStr);
+  else luaL_error(L, "field '%s' not found", NameStr);
   lua_pop(L, 1);
   /* Stk: ... Tbl */
   return Num;
@@ -504,7 +504,7 @@ static HPDF_INT LclTblInt(
   lua_rawget(L, -2);
   /* Stk: ... Tbl Num? */
   if (lua_isnumber(L, -1)) Num = lua_tointeger(L, -1);
-  else luaL_error(L, "field " LUA_QS " not found", NameStr);
+  else luaL_error(L, "field '%s' not found", NameStr);
   lua_pop(L, 1);
   /* Stk: ... Tbl */
   return Num;
@@ -527,7 +527,7 @@ static char LclTblChar(
   /* Stk: ... RctTbl Str? */
   Str = lua_tostring(L, -1);
   Ch = *Str;
-  if (! Str) luaL_error(L, "expecting character field " LUA_QS, NameStr);
+  if (! Str) luaL_error(L, "expecting character field '%s'", NameStr);
   lua_pop(L, 1);
   /* Stk: ... RctTbl */
   return Ch;
